@@ -1,0 +1,97 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plots",
+  "info": {
+    "name": "Plot",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Residential",
+        "Commercial",
+        "Agricultural"
+      ],
+      "required": true
+    },
+    "Description": {
+      "type": "richtext",
+      "required": true
+    },
+    "Area": {
+      "type": "float",
+      "required": true
+    },
+    "Address": {
+      "type": "string",
+      "required": true
+    },
+    "Price": {
+      "type": "decimal",
+      "required": true
+    },
+    "BookingAmount": {
+      "type": "decimal"
+    },
+    "ProjectName": {
+      "type": "string"
+    },
+    "Water": {
+      "type": "string"
+    },
+    "Electricity": {
+      "type": "string"
+    },
+    "CarParking": {
+      "type": "boolean"
+    },
+    "TransactionType": {
+      "type": "enumeration",
+      "enum": [
+        "New",
+        "Resale"
+      ]
+    },
+    "Possession": {
+      "type": "string"
+    },
+    "Facing": {
+      "type": "enumeration",
+      "enum": [
+        "East",
+        "South"
+      ]
+    },
+    "Ownership": {
+      "type": "enumeration",
+      "enum": [
+        "Freehold",
+        "Leasehold"
+      ]
+    },
+    "ImageUrls": {
+      "type": "text"
+    },
+    "VideoUrls": {
+      "type": "text"
+    },
+    "PerSqFt": {
+      "type": "decimal"
+    },
+    "location": {
+      "model": "locality"
+    }
+  }
+}
