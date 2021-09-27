@@ -1,7 +1,7 @@
 /* /pages/index.js */
 import React, { useState } from "react";
 
-import { Col, Input, InputGroup, InputGroupAddon, Row } from "reactstrap";
+import { Col, InputGroup, FormControl, Row } from "react-bootstrap";
 import PlotList from "../components/PlotList";
 
 function Home() {
@@ -10,10 +10,13 @@ function Home() {
     <div className="container-fluid">
       <Row>
         <Col>
-          <div className="search">
+          <div className="mb-3">
             <InputGroup>
-              <InputGroupAddon addonType="append"> Search </InputGroupAddon>
-              <Input
+              <InputGroup.Text id="lblSearch"> Search </InputGroup.Text>
+              <FormControl
+                placeholder="Search Property"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
                 onChange={e => updateQuery(e.target.value.toLocaleLowerCase())}
                 value={query}
               />

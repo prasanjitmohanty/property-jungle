@@ -7,13 +7,9 @@ import Link from "next/link";
 
 import {
   Card,
-  CardBody,
-  CardImg,
-  CardText,
-  CardTitle,
   Row,
-  Col,
-} from "reactstrap";
+  Col
+} from "react-bootstrap";
 
 const QUERY = gql`
   {
@@ -44,17 +40,17 @@ function PlotList(props) {
         <Row>
           {searchQuery.map((res) => (
             <Col xs="6" sm="4" key={res.id}>
-              <Card style={{ margin: "0 0.5rem 20px 0.5rem" }}>
-                <CardImg
+              <Card style={{ width: '18rem'}}>
+                <Card.Img
                   top={true}
                   style={{ height: 250 }}
                   src={res.ImageUrls}
                 />
-                <CardBody>
-                  <CardTitle>{res.Title}</CardTitle>
-                  <CardText>Plot Area: {res.Area} sqft</CardText>
-                  <CardText>Price: Rs {res.Price}</CardText>
-                </CardBody>
+                <Card.Body>
+                  <Card.Title>{res.Title}</Card.Title>
+                  <Card.Text>Plot Area: {res.Area} sqft</Card.Text>
+                  <Card.Text>Price: Rs {res.Price}</Card.Text>
+                </Card.Body>
                 <div className="card-footer">
                   <Link
                     as={`/plots/${res.id}`}
